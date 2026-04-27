@@ -1,17 +1,10 @@
-import { Poppins, Audiowide } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-poppins",
-  display: "swap",
-});
-
-const audiowide = Audiowide({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-audiowide",
   display: "swap",
 });
 
@@ -37,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${poppins.variable} ${audiowide.variable} font-sans min-h-screen bg-white text-[#2d2e32]`}>
+      <body className={`${poppins.variable} font-sans min-h-screen bg-white text-[#2d2e32]`}>
         {children}
       </body>
     </html>
