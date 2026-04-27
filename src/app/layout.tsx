@@ -19,16 +19,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} dark h-full antialiased`}
+      className={`${outfit.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans bg-[#0a0a0b] selection:bg-primary selection:text-primary-foreground">
-        <div className="fixed inset-0 -z-50 h-full w-full bg-[#0a0a0b]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,1),rgba(10,10,11,1))]" />
-          <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
-        </div>
+      <body className="min-h-full flex flex-col font-sans bg-[#0e0e0e] selection:bg-white selection:text-black">
+
         {children}
       </body>
     </html>
+
   );
 }
 

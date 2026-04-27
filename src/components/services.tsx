@@ -1,81 +1,41 @@
 "use client";
 
-import { Globe, Server, ShieldCheck, Search } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Services() {
   const services = [
-    {
-      title: "Website Attacks",
-      description: "Exploiting structural weaknesses including SQLi, XSS, SSRF, and advanced Web Shell deployment strategies.",
-      icon: Globe,
-    },
-    {
-      title: "Infrastructure Security",
-      description: "Analyzing network protocols (DNS, TCP/UDP), firewall bypass techniques, and comprehensive service enumeration.",
-      icon: Server,
-    },
-    {
-      title: "Cloud Defense",
-      description: "Securing local and hybrid cloud environments against common misconfigurations and privilege escalation vectors.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Threat Research",
-      description: "Proactive identification of zero-day vulnerabilities through automated fuzzing and rigorous manual code auditing.",
-      icon: Search,
-    },
+    { title: "Website Attacks", id: "01" },
+    { title: "Infrastructure Security", id: "02" },
+    { title: "Cloud Defense", id: "03" },
+    { title: "Threat Research", id: "04" },
   ];
 
   return (
-    <section id="services" className="py-40 relative">
-      <div className="container mx-auto px-6 md:px-12">
-        <motion.div 
-          className="flex flex-col md:flex-row md:items-end justify-between gap-12 mb-32"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="space-y-6">
-            <div className="h-[2px] w-12 bg-primary" />
-            <h3 className="text-[10px] font-black uppercase tracking-[0.5em] text-primary">Capabilities</h3>
-            <h2 className="text-6xl font-black tracking-tighter text-foreground md:text-8xl leading-none">
-              STRATEGIC <br />
-              <span className="text-muted-foreground/10">DEFENSE.</span>
+    <section id="services" className="py-40 bg-[#0e0e0e]">
+      <div className="container mx-auto px-6">
+        <div className="grid gap-24 md:grid-cols-2">
+          <div className="space-y-4">
+            <h2 className="text-reveal text-sm font-bold uppercase tracking-[0.4em] text-[#888888]">
+              Capabilities
             </h2>
+            <h3 className="text-reveal [animation-delay:0.2s] text-4xl font-bold text-white md:text-5xl">
+              Strategic Defense.
+            </h3>
           </div>
-        </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2">
-          {services.map((service, i) => (
-            <motion.div 
-              key={i} 
-              className="group relative overflow-hidden rounded-[3rem] bg-secondary/10 p-16 border border-white/5 transition-all duration-700 hover:bg-secondary/20 hover:border-white/10"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: i * 0.1 }}
-            >
-              <div className="mb-12 flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/10 text-primary transition-all duration-700 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-                <service.icon className="h-10 w-10" />
+          <div className="divide-y divide-[#222222]">
+            {services.map((service, i) => (
+              <div key={i} className="text-reveal [animation-delay:0.3s] group flex items-center justify-between py-12 transition-colors hover:text-white">
+                <div className="flex items-center gap-12">
+                  <span className="text-sm font-bold text-[#444444] group-hover:text-white transition-colors">{service.id}</span>
+                  <h4 className="text-2xl font-bold text-[#888888] group-hover:text-white transition-colors md:text-4xl">{service.title}</h4>
+                </div>
+                <div className="h-2 w-2 rounded-full bg-[#222222] group-hover:bg-white transition-colors" />
               </div>
-              <h4 className="mb-6 text-3xl font-black tracking-tighter text-foreground">{service.title}</h4>
-              <p className="text-xl font-light leading-relaxed text-muted-foreground group-hover:text-foreground/80 transition-colors">
-                {service.description}
-              </p>
-              
-              <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-primary/5 blur-[100px] transition-all duration-1000 group-hover:bg-primary/20" />
-              
-              <div className="absolute bottom-16 right-16 opacity-0 group-hover:opacity-100 transition-all duration-700 translate-x-4 group-hover:translate-x-0">
-                <div className="h-2 w-2 rounded-full bg-primary" />
-              </div>
-            </motion.div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
-
-
   );
 }
