@@ -54,7 +54,7 @@ export function Hero() {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.3 * i },
+      transition: { staggerChildren: 0.1, delayChildren: 0.1 * i },
     }),
   } as const;
 
@@ -147,9 +147,9 @@ export function Hero() {
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 1, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5, duration: 1, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative flex-1 flex justify-center md:justify-end"
         >
           <div className="relative aspect-square w-[300px] md:w-[450px]">
