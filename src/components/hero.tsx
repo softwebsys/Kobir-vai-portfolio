@@ -56,7 +56,7 @@ export function Hero() {
       opacity: 1,
       transition: { staggerChildren: 0.1, delayChildren: 0.3 * i },
     }),
-  };
+  } as const;
 
   const child = {
     visible: {
@@ -77,7 +77,7 @@ export function Hero() {
         stiffness: 100,
       },
     },
-  };
+  } as const;
 
   return (
     <section className="bg-[#f9f9f9] py-16 md:py-32 overflow-hidden min-h-[85vh] flex items-center">
