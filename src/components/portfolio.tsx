@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export function Portfolio() {
   const projects = [
@@ -10,21 +11,31 @@ export function Portfolio() {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-[#f9f9f9]">
+    <section id="portfolio" className="py-24 bg-[#f9f9f9] overflow-hidden">
       <div className="mx-auto max-w-[1280px] px-6 md:px-10">
-        <div className="mb-16 space-y-4 reveal-animation">
+        <motion.div 
+          className="mb-16 space-y-4"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="inline-block border-b-[3px] border-[#1770b5] pb-2">
             <h2 className="text-sm font-[800] uppercase tracking-widest text-[#2d2e32]">Portfolio</h2>
           </div>
           <h3 className="text-4xl font-[800] text-[#2d2e32] md:text-5xl">Selected Projects.</h3>
-        </div>
+        </motion.div>
 
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
-            <div 
+            <motion.div 
               key={i} 
-              className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm transition-all hover:-translate-y-2 hover:shadow-xl reveal-animation"
-              style={{ animationDelay: `${i * 0.1}s` }}
+              className="group bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-premium transition-all"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
+              whileHover={{ y: -10 }}
             >
               <div className="relative aspect-video overflow-hidden">
                 <Image
@@ -38,7 +49,7 @@ export function Portfolio() {
               <div className="p-8 space-y-4">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#1770b5]">{project.category}</span>
                 <h4 className="text-xl font-[800] text-[#2d2e32]">{project.name}</h4>
-                <p className="text-sm text-[#a0acbd] font-light leading-relaxed">
+                <p className="text-sm text-[#5a606c] font-light leading-relaxed">
                   Comprehensive security auditing and technical report generation for enterprise environments.
                 </p>
                 <div className="pt-4">
@@ -48,7 +59,7 @@ export function Portfolio() {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

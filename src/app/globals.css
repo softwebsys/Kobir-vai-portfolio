@@ -1,43 +1,28 @@
+@import "tailwindcss";
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #2d2e32;
-  --card: #ffffff;
-  --card-foreground: #2d2e32;
-  --popover: #ffffff;
-  --popover-foreground: #2d2e32;
-  --primary: #1770b5;
-  --primary-foreground: #ffffff;
-  --secondary: #f9f9f9;
-  --secondary-foreground: #2d2e32;
-  --muted: #f9f9f9;
-  --muted-foreground: #a0acbd;
-  --accent: #f9f9f9;
-  --accent-foreground: #2d2e32;
-  --destructive: #ef4444;
-  --border: #e5e7eb;
-  --input: #e5e7eb;
-  --ring: #1770b5;
-  --radius: 0.5rem;
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #2d2e32;
+  --color-primary: #1770b5;
+  --color-muted-foreground: #5a606c;
 }
 
 @layer base {
   * {
-    border-color: var(--border);
+    @apply border-gray-200;
   }
   body {
-    @apply bg-background text-foreground antialiased font-['Poppins',_sans-serif];
+    background-color: white;
+    color: #2d2e32;
+    @apply antialiased font-['Poppins',_sans-serif];
   }
 }
 
 @layer utilities {
   .container-custom {
-    @apply mx-auto max-w-[1200px] px-4 md:px-8;
+    @apply mx-auto max-w-[1280px] px-6 md:px-10;
   }
   
   .reveal-animation {
@@ -50,6 +35,10 @@
   }
 
   .nav-active {
-    @apply border-b-[3px] border-primary;
+    @apply border-b-[3px] border-[#1770b5];
+  }
+
+  .shadow-premium {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.2);
   }
 }

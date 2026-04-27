@@ -117,7 +117,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="max-w-xl text-lg leading-relaxed text-[#a0acbd] md:text-xl font-light"
+            className="max-w-xl text-lg leading-relaxed text-[#5a606c] md:text-xl font-light"
           >
             I specialize in identifying vulnerabilities and coordinating defensive strategies. 
             At 35, I bring a mature perspective to complex <span className="text-[#2d2e32] font-medium">security challenges</span>.

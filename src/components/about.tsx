@@ -23,7 +23,7 @@ export function About() {
               </h3>
             </div>
             
-            <div className="space-y-6 text-lg text-[#a0acbd] leading-relaxed font-light">
+            <div className="space-y-6 text-lg text-[#5a606c] leading-relaxed font-light">
               <p>
                 My name is <span className="font-semibold text-[#2d2e32]">Kabir Hossain</span>. I am a dedicated Junior Cyber Security Engineer based in Dhaka, Bangladesh. With a focus on <span className="text-[#1770b5] font-medium">Network Security</span> and vulnerability assessments, I strive to build resilient digital architectures.
               </p>
@@ -44,7 +44,7 @@ export function About() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="text-3xl font-[800] text-[#1770b5]">{stat.value}</div>
-                  <div className="text-sm font-semibold text-[#a0acbd] uppercase tracking-wider">{stat.label}</div>
+                  <div className="text-sm font-semibold text-[#5a606c] uppercase tracking-wider">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -64,7 +64,7 @@ export function About() {
               </blockquote>
               <div className="mt-10 flex items-center gap-4">
                 <div className="h-[2px] w-12 bg-[#1770b5]" />
-                <span className="text-sm font-bold uppercase tracking-widest text-[#a0acbd]">Core Philosophy</span>
+                <span className="text-sm font-bold uppercase tracking-widest text-[#5a606c]">Core Philosophy</span>
               </div>
             </div>
           </motion.div>
