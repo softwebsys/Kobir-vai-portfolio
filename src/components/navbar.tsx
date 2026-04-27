@@ -44,6 +44,7 @@ export function Navbar() {
         <button 
           className="lg:hidden p-2 text-[#2d2e32] hover:text-[#1770b5] transition-colors"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>

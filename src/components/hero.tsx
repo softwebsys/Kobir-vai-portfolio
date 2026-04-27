@@ -133,8 +133,12 @@ export function Hero() {
               Download CV
             </Button>
             <div className="flex gap-6">
-              {[Linkedin, Mail, Github].map((Icon, i) => (
-                <a key={i} href="#" className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 text-[#2d2e32] hover:text-[#1770b5] transition-all hover:-translate-y-1">
+              {[
+                { Icon: Linkedin, label: "LinkedIn" },
+                { Icon: Mail, label: "Email" },
+                { Icon: Github, label: "GitHub" }
+              ].map(({ Icon, label }, i) => (
+                <a key={i} href="#" aria-label={label} className="flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm border border-gray-100 text-[#2d2e32] hover:text-[#1770b5] transition-all hover:-translate-y-1">
                   <Icon className="h-5 w-5" />
                 </a>
               ))}
@@ -155,6 +159,7 @@ export function Hero() {
                 src="/kabir.png"
                 alt="Kabir Hossain"
                 fill
+                sizes="(max-width: 768px) 300px, 450px"
                 className="object-cover"
                 priority
               />

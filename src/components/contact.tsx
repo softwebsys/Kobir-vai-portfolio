@@ -101,8 +101,14 @@ export function Contact() {
             <span className="text-xl font-[800] text-[#2d2e32] uppercase">KABIR <span className="text-[#1770b5]">HOSSAIN</span></span>
             <p className="text-sm text-[#5a606c]">© 2024 / Engineered for absolute security.</p>
             <div className="flex gap-6">
-              {[Github, Linkedin, Mail].map((Icon, i) => (
-                <Icon key={i} className="h-5 w-5 text-[#5a606c] hover:text-[#1770b5] cursor-pointer transition-colors" />
+              {[
+                { Icon: Github, label: "GitHub" },
+                { Icon: Linkedin, label: "LinkedIn" },
+                { Icon: Mail, label: "Email" }
+              ].map(({ Icon, label }, i) => (
+                <a key={i} href="#" aria-label={label} className="text-[#5a606c] hover:text-[#1770b5] transition-colors">
+                  <Icon className="h-5 w-5" />
+                </a>
               ))}
             </div>
           </div>
