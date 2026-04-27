@@ -98,7 +98,7 @@ export function Hero() {
             
             <motion.h1 
               variants={child}
-              className="text-5xl font-[800] tracking-tight text-[#2d2e32] md:text-7xl lg:text-8xl leading-[1.1]"
+              className="text-4xl font-hero tracking-tight text-[#2d2e32] md:text-6xl lg:text-7xl leading-[1.1]"
             >
               Securing the <br className="hidden md:block" /> 
               <span className="relative inline-block text-[#1770b5]">
