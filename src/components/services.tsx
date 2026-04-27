@@ -1,39 +1,57 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Globe, Server, ShieldCheck, Search } from "lucide-react";
 
 export function Services() {
   const services = [
-    { title: "Website Attacks", id: "01" },
-    { title: "Infrastructure Security", id: "02" },
-    { title: "Cloud Defense", id: "03" },
-    { title: "Threat Research", id: "04" },
+    { 
+      title: "Vulnerability Assessment", 
+      description: "Identifying security gaps in web applications and network infrastructure using industry-standard methodologies.",
+      icon: Search 
+    },
+    { 
+      title: "Network Security", 
+      description: "Analyzing packet traffic and firewall configurations to ensure robust defense-in-depth strategies.",
+      icon: ShieldCheck 
+    },
+    { 
+      title: "Penetration Testing", 
+      description: "Simulating cyber attacks to evaluate the security of an organization's defensive systems.",
+      icon: Server 
+    },
+    { 
+      title: "Security Auditing", 
+      description: "Reviewing system configurations and access controls to ensure compliance with security best practices.",
+      icon: Globe 
+    },
   ];
 
   return (
-    <section id="services" className="py-40 bg-[#0e0e0e]">
-      <div className="container mx-auto px-6">
-        <div className="grid gap-24 md:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-reveal text-sm font-bold uppercase tracking-[0.4em] text-[#888888]">
-              Capabilities
-            </h2>
-            <h3 className="text-reveal [animation-delay:0.2s] text-4xl font-bold text-white md:text-5xl">
-              Strategic Defense.
-            </h3>
+    <section id="services" className="py-24 bg-white">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+        <div className="mb-16 space-y-4 reveal-animation">
+          <div className="inline-block border-b-[3px] border-[#1770b5] pb-2">
+            <h2 className="text-sm font-[800] uppercase tracking-widest text-[#2d2e32]">Services</h2>
           </div>
+          <h3 className="text-4xl font-[800] text-[#2d2e32] md:text-5xl">Strategic Security.</h3>
+        </div>
 
-          <div className="divide-y divide-[#222222]">
-            {services.map((service, i) => (
-              <div key={i} className="text-reveal [animation-delay:0.3s] group flex items-center justify-between py-12 transition-colors hover:text-white">
-                <div className="flex items-center gap-12">
-                  <span className="text-sm font-bold text-[#444444] group-hover:text-white transition-colors">{service.id}</span>
-                  <h4 className="text-2xl font-bold text-[#888888] group-hover:text-white transition-colors md:text-4xl">{service.title}</h4>
-                </div>
-                <div className="h-2 w-2 rounded-full bg-[#222222] group-hover:bg-white transition-colors" />
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, i) => (
+            <div 
+              key={i} 
+              className="group p-10 bg-white rounded-2xl border border-gray-100 transition-all hover:bg-[#f9f9f9] hover:border-[#1770b5]/20 reveal-animation"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              <div className="mb-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#1770b5]/5 text-[#1770b5] transition-all group-hover:bg-[#1770b5] group-hover:text-white">
+                <service.icon className="h-8 w-8" />
               </div>
-            ))}
-          </div>
+              <h4 className="mb-4 text-xl font-[800] text-[#2d2e32]">{service.title}</h4>
+              <p className="text-sm text-[#a0acbd] font-light leading-relaxed">
+                {service.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

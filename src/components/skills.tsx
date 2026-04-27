@@ -1,36 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 export function Skills() {
   const skills = [
-    { name: "Nmap", level: "Expert" },
-    { name: "Linux", level: "Advanced" },
-    { name: "Wireshark", level: "Expert" },
-    { name: "Burp Suite", level: "Advanced" },
+    { name: "Network Mapper (Nmap)", level: "Expert", percent: 90 },
+    { name: "Linux Systems", level: "Advanced", percent: 85 },
+    { name: "Traffic Analysis", level: "Expert", percent: 85 },
+    { name: "Vulnerability Assessment", level: "Advanced", percent: 80 },
   ];
 
   return (
-    <section id="skills" className="py-40 bg-[#0e0e0e]">
-      <div className="container mx-auto px-6">
-        <div className="grid gap-24 md:grid-cols-2">
-          <div className="space-y-4">
-            <h2 className="text-reveal text-sm font-bold uppercase tracking-[0.4em] text-[#888888]">
-              Expertise
-            </h2>
-            <h3 className="text-reveal [animation-delay:0.2s] text-4xl font-bold text-white md:text-5xl">
-              Technical Arsenal.
-            </h3>
+    <section id="skills" className="py-24 bg-white">
+      <div className="mx-auto max-w-[1280px] px-6 md:px-10">
+        <div className="mb-16 space-y-4 reveal-animation">
+          <div className="inline-block border-b-[3px] border-[#1770b5] pb-2">
+            <h2 className="text-sm font-[800] uppercase tracking-widest text-[#2d2e32]">Skills</h2>
           </div>
+          <h3 className="text-4xl font-[800] text-[#2d2e32] md:text-5xl">Technical Arsenal.</h3>
+        </div>
 
-          <div className="grid grid-cols-2 gap-12">
-            {skills.map((skill, i) => (
-              <div key={i} className="text-reveal [animation-delay:0.3s] space-y-2">
-                <h4 className="text-xl font-bold text-white">{skill.name}</h4>
-                <p className="text-[11px] font-bold uppercase tracking-widest text-[#444444]">{skill.level}</p>
+        <div className="grid gap-12 md:grid-cols-2">
+          {skills.map((skill, i) => (
+            <div 
+              key={i} 
+              className="space-y-4 reveal-animation"
+              style={{ animationDelay: `${i * 0.1}s` }}
+            >
+              <div className="flex justify-between items-end">
+                <div className="space-y-1">
+                  <h4 className="text-xl font-[800] text-[#2d2e32]">{skill.name}</h4>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#1770b5]">{skill.level}</span>
+                </div>
+                <div className="text-3xl font-[800] text-[#2d2e32]/10">{skill.percent}%</div>
               </div>
-            ))}
-          </div>
+              <div className="h-2 w-full bg-[#f9f9f9] rounded-full overflow-hidden">
+                <div 
+                  className="h-full bg-[#1770b5] transition-all duration-1000 ease-out"
+                  style={{ width: `${skill.percent}%` }}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
